@@ -1,4 +1,4 @@
-# college_app
+# ExamFire
 
 A new Flutter project.
 
