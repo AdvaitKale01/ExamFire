@@ -5,7 +5,7 @@ class SubjectsService {
     'Mathematics-1',
     'Applied Physics',
     'Introduction to Computer Science and Engineering',
-    'Digital Logic And Circuit Design',
+    'Digital Logic and Circuit Design',
     'Principal of C Language',
     'Computer Peripherals and Interfaces',
     'Software Foundation and Programming-1 (with C)',
@@ -30,8 +30,20 @@ class SubjectsService {
   ];
 
   static final List<String> year3cs = [
-    'Year3cs',
+    'Discrete structure'
+        'Operating System'
+        'Analysis and Design of Algorithms'
+        ' Computer Graphics and Multimedia Elective-1'
+        'Unix and Shell Programming'
+        'Scripting Languages'
+        'Theory of Computation'
+        'Cloud Computing'
+        'Cyber and Network Security'
+        'Software Engineering and Project Management'
+        ' Minor Project'
+        'Technical Presentation Skills'
   ];
+
   static final List<String> year1it = [
     'Mathematics-1',
     'Computer Peripherals and Interfaces',
