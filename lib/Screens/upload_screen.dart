@@ -22,7 +22,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   final TextEditingController _typeAheadController = TextEditingController();
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -362,21 +361,28 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  void showMessage(String message, [MaterialColor color = Colors.red]) {
-    _scaffoldKey.currentState.showSnackBar(
-        new SnackBar(backgroundColor: color, content: new Text(message)));
-  }
+  void showMessage(String message, [MaterialColor color = Colors.red]) {}
 
   void _submitForm() {
     final FormState form = _formKey.currentState;
 
     if (!form.validate()) {
-      showMessage('Form is not valid!  Please review and correct.');
+      Scaffold.of(context).showSnackBar(
+        new SnackBar(
+          backgroundColor: Colors.red,
+          content: new Text('Please Review the details!'),
+        ),
+      );
     } else {
       form.save(); //This invokes each onSaved event
 
-      print('Form save called, newContact is now up to date...');
+      print('Form ok!');
+      _uploadToFireBase();
     }
+  }
+
+  void _uploadToFireBase() {
+    //TODO: Upload Details and File to Fire Store
   }
 
   @override
