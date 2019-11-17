@@ -1,0 +1,40 @@
+name: college_app
+description: A new Flutter project.
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  font_awesome_flutter: ^8.5.0
+  bottom_navy_bar: ^5.2.0
+  cloud_firestore:
+  firebase_auth:
+  google_sign_in:
+  shared_preferences: ^0.4.3
+  line_icons: ^0.2.0
+  file_picker: ^1.4.2
+  flutter_typeahead: ^1.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Black.ttf
+    - family: Quicksand
+      fonts:
+        - asset: fonts/Quicksand.ttf
+
+
