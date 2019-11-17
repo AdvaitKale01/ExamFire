@@ -2,18 +2,18 @@ class SubjectsService {
   static List<String> subjects;
 
   static final List<String> year1cs = [
-    'Mathematics - 1',
+    'Mathematics-1',
     'Applied Physics',
-    'Introduction to   Computer Science and Engineering',
+    'Introduction to Computer Science and Engineering',
     'Digital Logic And Circuit Design',
     'Principal of C Language',
     'Computer Peripherals and Interfaces',
     'Software Foundation and Programming-1 (with C)',
     'Web Development Lab-1(xml & html)',
     'Programming Skills with C',
-    'Red Hat Administration - 1',
-    'Mobile Application Development - 1',
-    'Mathematics - 2',
+    'Red Hat Administration-1',
+    'Mobile Application Development-1',
+    'Mathematics-2',
     'Data Structure and Algorithms',
     'Computer System Organisation',
     'Object Oriented Programming',
@@ -21,8 +21,8 @@ class SubjectsService {
     'Introduction To Core Java',
     'Communication Skills',
     'Software Foundation and Programming - 1(with C++)',
-    'Red Hat Administration - 2',
-    'Mobile Application Development - 2',
+    'Red Hat Administration-2',
+    'Mobile Application Development-2',
   ];
 
   static final List<String> year2cs = [
@@ -33,7 +33,34 @@ class SubjectsService {
     'Year3cs',
   ];
   static final List<String> year1it = [
-    'Year1it',
+    'Mathematics-1',
+    'Computer Peripherals and Interfaces',
+    'Introduction to Information Technology',
+    'Digital Logic And Circuit Design',
+    'Principal of C Language',
+    'Programming Skills with C ',
+    'Web Development Lab-1(xml & html)',
+    'Mathematics-2',
+    'Applied Physics',
+    'Data Structure and Algorithms',
+    'Computer System Organisation',
+    'Object Oriented Programming',
+    'Programming Skills with C++',
+    'Communication Skills',
+    'Discrete Structure',
+    'Data Communication',
+    'Analysis & Design of Algorithm',
+    'Operating System',
+    'Introduction to Core Java',
+    'Technical Presentation Skills',
+    'Web Development Lab-2 (PHP/JSP)',
+    'Environment and Energy Studies',
+    'Computer Networks',
+    'Data Base Management System',
+    'Software Engineering & Project Management',
+    'Advance Java Programming',
+    'UNIX and shell Programming Lab',
+    'Mobile App Development Lab',
   ];
 
   static final List<String> year2it = [

@@ -141,23 +141,26 @@ const kNormalTextStyle = TextStyle(
 );
 
 class RoundedTextBox extends StatelessWidget {
-  final onChanged, validate;
+  //final onChanged;
+  final validate, onSaved;
   final String labelText, hintText;
 
   RoundedTextBox(
       {@required this.hintText,
       @required this.labelText,
-      @required this.onChanged,
-      @required this.validate});
+      // @required this.onChanged,
+      @required this.validate,
+      @required this.onSaved});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved,
       style: TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryBlue),
-      onChanged: onChanged,
+      // onChanged: onChanged,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(15.0),
         labelText: labelText,

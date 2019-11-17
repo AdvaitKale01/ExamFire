@@ -22,6 +22,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   final TextEditingController _typeAheadController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     super.initState();
@@ -110,15 +112,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     child: RoundedTextBox(
                       labelText: 'Title',
                       hintText: 'Eg: Physics Unit 1',
-                      onChanged: (value) {
-                        _title = value;
-                      },
+//                      onChanged: (value) {
+//                        _title = value;
+//                      },
                       validate: (value) {
                         if (value.isEmpty) {
                           return 'Please enter document title!';
                         }
                         return null;
                       },
+                      onSaved: (value) => this._title = value,
                     ),
                   ),
                   Row(
@@ -262,15 +265,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     child: RoundedTextBox(
                       labelText: 'Teacher',
                       hintText: 'Teacher of Document',
-                      onChanged: (value) {
-                        _teacher = value;
-                      },
+//                      onChanged: (value) {
+//                        _teacher = value;
+//                      },
                       validate: (value) {
                         if (value.isEmpty) {
                           return 'Please enter teacher of the notes!';
                         }
                         return null;
                       },
+                      onSaved: (value) => this._teacher = value,
                     ),
                   ),
                   Padding(
@@ -320,8 +324,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                   FlatButton(
                     onPressed: () {
-                      //TODO: Upload Files to Firestore
-
+                      _submitForm();
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
                           content: Text('Uploading Your File...'),
@@ -357,6 +360,23 @@ class _ExploreScreenState extends State<ExploreScreen> {
         ],
       ),
     );
+  }
+
+  void showMessage(String message, [MaterialColor color = Colors.red]) {
+    _scaffoldKey.currentState.showSnackBar(
+        new SnackBar(backgroundColor: color, content: new Text(message)));
+  }
+
+  void _submitForm() {
+    final FormState form = _formKey.currentState;
+
+    if (!form.validate()) {
+      showMessage('Form is not valid!  Please review and correct.');
+    } else {
+      form.save(); //This invokes each onSaved event
+
+      print('Form save called, newContact is now up to date...');
+    }
   }
 
   @override
