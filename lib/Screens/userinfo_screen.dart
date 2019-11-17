@@ -270,7 +270,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                 color: AppColors.primaryBlack,
                 child: Texts.nextText,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(50),
                 ),
                 onPressed: () async {
                   print(yearValue);

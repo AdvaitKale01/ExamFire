@@ -1,5 +1,5 @@
 import 'package:college_app/Components/utils.dart';
-import 'package:college_app/Screens/explore_screen.dart';
+import 'package:college_app/Screens/upload_screen.dart';
 
 import 'package:flutter/material.dart';
 

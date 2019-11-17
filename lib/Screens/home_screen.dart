@@ -1,6 +1,6 @@
 import 'package:college_app/Components/bottom_navy_bar.dart' as prefix0;
 import 'package:college_app/Screens/account_page.dart';
-import 'package:college_app/Screens/explore_screen.dart';
+import 'package:college_app/Screens/upload_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:college_app/Screens/home_page.dart';
 import 'dart:io';
