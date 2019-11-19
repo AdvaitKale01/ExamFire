@@ -77,6 +77,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         ),
                         Text(
                           _filePath,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: Fonts.primaryFont,
                             fontSize: 12.0,
