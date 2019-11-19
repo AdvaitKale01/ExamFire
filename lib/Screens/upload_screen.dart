@@ -328,13 +328,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       Scaffold.of(context).showSnackBar(SnackBar(
                         content: Text('Uploading Your File...'),
                       ));
-                      UploadData(
-                          Title: this._title,
-                          Branch: this._branch,
-                          DocType: this._docType,
-                          Teacher: this._teacher,
-                          Year: this._year,
-                          Subject: this._subject);
+
                     },
                     child: Container(
                       padding: EdgeInsets.only(top: 10, bottom: 12),
@@ -381,7 +375,13 @@ class _ExploreScreenState extends State<ExploreScreen> {
       );
     } else {
       form.save(); //This invokes each onSaved event
-
+      UploadData(
+          Title: this._title,
+          Branch: this._branch,
+          DocType: this._docType,
+          Teacher: this._teacher,
+          Year: this._year,
+          Subject: this._subject);
       print('Form ok!');
       _uploadToFireBase();
     }
