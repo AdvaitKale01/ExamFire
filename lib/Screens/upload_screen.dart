@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:college_app/Components/subject_data.dart';
+import 'package:college_app/Components/upload_data.dart';
 
 class ExploreScreen extends StatefulWidget {
   @override
@@ -324,11 +325,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   FlatButton(
                     onPressed: () {
                       _submitForm();
-                      Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Uploading Your File...'),
-                        ),
-                      );
+                      Scaffold.of(context).showSnackBar(SnackBar(
+                        content: Text('Uploading Your File...'),
+                      ));
+                      UploadData(
+                          Title: this._title,
+                          Branch: this._branch,
+                          DocType: this._docType,
+                          Teacher: this._teacher,
+                          Year: this._year,
+                          Subject: this._subject);
                     },
                     child: Container(
                       padding: EdgeInsets.only(top: 10, bottom: 12),
