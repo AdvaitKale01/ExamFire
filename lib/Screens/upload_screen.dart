@@ -20,6 +20,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
       _branch = 'Computer Science',
       _teacher,
       _docType = 'Notes';
+  bool _showTeacher = true;
 
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   final TextEditingController _typeAheadController = TextEditingController();
@@ -41,7 +42,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             padding: const EdgeInsets.all(15),
             child: Container(
               //The card design
-              height: 640, //Card Height
+              // height: 640, //Card Height
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 gradient: LinearGradient(
@@ -209,6 +210,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ),
                     ],
                   ),
+                  //Type Ahed Form Field
                   Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: TypeAheadFormField(
@@ -259,26 +261,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       onSaved: (value) => this._subject = value,
                     ),
                   ),
+                  //Notes
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 20.0, right: 20.0, top: 5.0),
-                    child: RoundedTextBox(
-                      labelText: 'Teacher',
-                      hintText: 'Teacher of Document',
-//                      onChanged: (value) {
-//                        _teacher = value;
-//                      },
-                      validate: (value) {
-                        if (value.isEmpty) {
-                          return 'Please enter teacher of the notes!';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) => this._teacher = value,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(bottom: 15),
                     child: Container(
                       width: 160,
                       padding: EdgeInsets.only(left: 5),
@@ -301,9 +286,17 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           height: 0,
                         ),
                         onChanged: (String newValue) {
-                          setState(() {
-                            _docType = newValue;
-                          });
+                          setState(
+                            () {
+                              _docType = newValue;
+                              if (_docType == 'Notes' ||
+                                  _docType == 'Assignment') {
+                                _showTeacher = true;
+                              } else {
+                                _showTeacher = false;
+                              }
+                            },
+                          );
                         },
                         items: <String>[
                           'Notes',
@@ -319,8 +312,32 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ),
                     ),
                   ),
+                  //Teacher
+                  _showTeacher
+                      ? Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20.0, right: 20.0, top: 5.0),
+                          child: RoundedTextBox(
+                            labelText: 'Teacher',
+                            hintText: 'Teacher of Document',
+//                      onChanged: (value) {
+//                        _teacher = value;
+//                      },
+                            validate: (value) {
+                              if (value.isEmpty) {
+                                return 'Please enter teacher of the notes!';
+                              }
+                              return null;
+                            },
+                            onSaved: (value) => this._teacher = value,
+                          ),
+                        )
+                      : SizedBox(
+                          height: 0,
+                        ),
+
                   SizedBox(
-                    height: 16.7,
+                    height: 20,
                   ),
                   FlatButton(
                     onPressed: () {

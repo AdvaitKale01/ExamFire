@@ -1,4 +1,4 @@
-import 'package:college_app/Components/bottom_navy_bar.dart' as prefix0;
+import 'package:college_app/Components/bottom_navy_bar.dart' as prefix;
 import 'package:college_app/Screens/account_page.dart';
 import 'package:college_app/Screens/upload_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,19 +26,19 @@ class _HomeScreenState extends State<HomeScreen> {
             duration: Duration(milliseconds: 300), curve: Curves.ease);
       });
 
-  prefix0.BottomNavyBarItem homeItem = prefix0.BottomNavyBarItem(
+  prefix.BottomNavyBarItem homeItem = prefix.BottomNavyBarItem(
       icon: Icon(LineIcons.home),
       title: Text('Home'),
       activeColor: Colors.redAccent,
       inactiveColor: Colors.black);
 
-  prefix0.BottomNavyBarItem searchItem = prefix0.BottomNavyBarItem(
+  prefix.BottomNavyBarItem searchItem = prefix.BottomNavyBarItem(
       icon: Icon(LineIcons.upload),
       title: Text('Upload'),
       activeColor: Colors.lightBlueAccent,
       inactiveColor: Colors.black);
 
-  prefix0.BottomNavyBarItem userItem = prefix0.BottomNavyBarItem(
+  prefix.BottomNavyBarItem userItem = prefix.BottomNavyBarItem(
       icon: Icon(LineIcons.user),
       title: Text('Account'),
       activeColor: Colors.greenAccent,
@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 userEmail, userName, userProfilePicURL, year, branch, program),
           ],
         ),
-        bottomNavigationBar: prefix0.BottomNavyBar(
+        bottomNavigationBar: prefix.BottomNavyBar(
           selectedIndex: _currentIndex,
           showElevation: false,
           animationDuration: Duration(milliseconds: 200),
