@@ -14,7 +14,7 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   //Datatypes
-  String _filePath ='',
+  String _filePath = '',
       _title,
       _year = 'First Year',
       _subject,
@@ -79,7 +79,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           _filePath,
                           style: TextStyle(
                             fontFamily: Fonts.primaryFont,
-                            fontSize: 16.0,
+                            fontSize: 12.0,
                             color: AppColors.primaryBlue,
                             fontWeight: FontWeight.w900,
                           ),
@@ -94,10 +94,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
                       var file = await SelectDocAndUpload();
                       setState(() {
-                        _filePath=file;
+                        _filePath = file;
                       });
                       //print('Upload pressed! $_subject\n$_branch\n$_year');
-
 
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
@@ -349,7 +348,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       Scaffold.of(context).showSnackBar(SnackBar(
                         content: Text('Uploading Your File...'),
                       ));
-
                     },
                     child: Container(
                       padding: EdgeInsets.only(top: 10, bottom: 12),
