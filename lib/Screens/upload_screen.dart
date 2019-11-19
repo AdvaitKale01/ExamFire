@@ -5,6 +5,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:college_app/Components/subject_data.dart';
 import 'package:college_app/Components/upload_data.dart';
+import 'package:college_app/Components/SelectDoucumentAndUpload.dart';
 
 class ExploreScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   //Datatypes
-  String _filePath = 'File Path',
+  String _filePath ='',
       _title,
       _year = 'First Year',
       _subject,
@@ -87,13 +88,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         ),
                       ],
                     ),
-                    onPressed: () {
-                      _subject = _typeAheadController.text;
-                      //TODO: Add FilePicker
+                    onPressed: () async {
+                      //_subject = _typeAheadController.text;
 
+                      var file = await SelectDocAndUpload();
+                      setState(() {
+                        _filePath=file;
+                      });
                       //print('Upload pressed! $_subject\n$_branch\n$_year');
 
-                      //TODO: SnackBar should show after file is picked from filepicker
+
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
                           content: Text('Fetching Your File...'),
