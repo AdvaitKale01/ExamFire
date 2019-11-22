@@ -1,11 +1,13 @@
+import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 
-SelectDocAndUpload()async{
-  String filePath;
-  filePath = await FilePicker.getFilePath(type: FileType.CUSTOM, fileExtension: 'pdf');
-print(filePath );
-return
-    filePath;
+File filePath;
 
+SelectDocAndUpload() async {
+  filePath =
+      await FilePicker.getFile(type: FileType.CUSTOM, fileExtension: 'pdf');
+  print(filePath);
+
+  return filePath;
 }

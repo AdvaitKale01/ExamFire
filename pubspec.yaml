@@ -20,6 +20,7 @@ dependencies:
   line_icons: ^0.2.0
   file_picker: ^1.4.2
   flutter_typeahead: ^1.7.0
+  firebase_storage: ^3.0.8
 
 dev_dependencies:
   flutter_test:

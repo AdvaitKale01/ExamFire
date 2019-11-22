@@ -6,6 +6,7 @@ import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:college_app/Components/subject_data.dart';
 import 'package:college_app/Components/upload_data.dart';
 import 'package:college_app/Components/SelectDoucumentAndUpload.dart';
+import 'package:college_app/Components/uploadDoc.dart';
 
 class ExploreScreen extends StatefulWidget {
   @override
@@ -94,7 +95,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
                       var file = await SelectDocAndUpload();
                       setState(() {
-                        _filePath = file;
+                        _filePath = file.toString();
                       });
                       //print('Upload pressed! $_subject\n$_branch\n$_year');
 
@@ -402,7 +403,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
           Year: this._year,
           Subject: this._subject);
       print('Form ok!');
-      _uploadToFireBase();
+    //  UploadDoc();
+
+   //   _uploadToFireBase();
     }
   }
 
