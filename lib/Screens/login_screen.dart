@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:college_app/Components/connect_button.dart';
 import 'package:college_app/Components/googleSingIn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';

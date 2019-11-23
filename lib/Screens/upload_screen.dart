@@ -14,7 +14,7 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   //Datatypes
-  String _filePath = '',
+  String _filePath = 'Click to select!',
       _title,
       _year = 'First Year',
       _subject,
@@ -92,18 +92,26 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     ),
                     onPressed: () async {
                       //_subject = _typeAheadController.text;
-
-                      var file = await SelectDocAndUpload();
-                      setState(() {
-                        _filePath = file.toString();
-                      });
-                      //print('Upload pressed! $_subject\n$_branch\n$_year');
-
-                      Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Fetching Your File...'),
-                        ),
-                      );
+                      try {
+                        var file = await SelectDocAndUpload();
+                        setState(
+                          () {
+                            if (file.toString() == 'null') {
+                              _filePath = 'Click to select!';
+                            } else {
+                              _filePath = file.toString();
+                              Scaffold.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Fetching Your File...'),
+                                ),
+                              );
+                            }
+                          },
+                        );
+                        //print('Upload pressed! $_subject\n$_branch\n$_year');
+                      } catch (e) {
+                        print(e);
+                      }
                     },
                   ),
                   Divider(
@@ -346,9 +354,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   FlatButton(
                     onPressed: () {
                       _submitForm();
-                      Scaffold.of(context).showSnackBar(SnackBar(
-                        content: Text('Uploading Your File...'),
-                      ));
                     },
                     child: Container(
                       padding: EdgeInsets.only(top: 10, bottom: 12),
@@ -386,26 +391,36 @@ class _ExploreScreenState extends State<ExploreScreen> {
   void _submitForm() {
     final FormState form = _formKey.currentState;
 
-    if (!form.validate()) {
+    if (_filePath != 'Click to select!') {
+      if (!form.validate()) {
+        Scaffold.of(context).showSnackBar(
+          new SnackBar(
+            backgroundColor: Colors.red,
+            content: new Text('Please Review the details!'),
+          ),
+        );
+      } else {
+        form.save(); //This invokes each onSaved event
+        UploadData(
+            Title: this._title,
+            Branch: this._branch,
+            DocType: this._docType,
+            Teacher: this._teacher,
+            Year: this._year,
+            Subject: this._subject);
+        print('Form ok!');
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text('Uploading Your File...'),
+        ));
+        //  UploadDoc();
+      }
+    } else {
       Scaffold.of(context).showSnackBar(
         new SnackBar(
           backgroundColor: Colors.red,
-          content: new Text('Please Review the details!'),
+          content: new Text('Please select a file!'),
         ),
       );
-    } else {
-      form.save(); //This invokes each onSaved event
-      UploadData(
-          Title: this._title,
-          Branch: this._branch,
-          DocType: this._docType,
-          Teacher: this._teacher,
-          Year: this._year,
-          Subject: this._subject);
-      print('Form ok!');
-    //  UploadDoc();
-
-   //   _uploadToFireBase();
     }
   }
 
