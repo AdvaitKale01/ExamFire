@@ -5,7 +5,7 @@ Firestore _firestore = Firestore.instance;
 
 List<DocumentSnapshot> list = [];
 bool _loading = true;
-//nd
+//nd and
 Future getProduct() async {
 print("in getProduct()");
   _loading = true;
