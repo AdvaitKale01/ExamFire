@@ -10,6 +10,7 @@ import 'Screens/home_screen.dart';
 import 'package:college_app/Screens/loader.dart';
 import 'package:college_app/Screens/paper/main_page.dart';
 import 'package:college_app/Screens/setting_page.dart';
+import 'package:college_app/Components/ShowScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         MainPage.id: (context) => MainPage(),
         SettingPage.id: (context) => SettingPage(),
+        ShowScreen.id:(context)=>ShowScreen(),
+
       },
       title: 'ExamFire',
       theme: ThemeData(

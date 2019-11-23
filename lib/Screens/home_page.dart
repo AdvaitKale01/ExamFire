@@ -1,3 +1,4 @@
+import 'package:college_app/Components/ShowScreen.dart';
 import 'package:college_app/Components/home_card.dart';
 import 'package:college_app/Screens/paper/main_page.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           height: 200,
           width: 350,
           onPressed: () {
-            Navigator.pushNamed(context, MainPage.id);
+            Navigator.pushNamed(context, ShowScreen.id);
           },
           text: 'MID SEM EXAM',
           colors: [Color(0xFFF1F2B5), Color(0xFF135058)],
