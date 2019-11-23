@@ -7,14 +7,15 @@ List<DocumentSnapshot> list = [];
 bool _loading = true;
 
 Future getProduct() async {
-print("in getProduct()");
+  print("in getProduct()");
   _loading = true;
 //hello
   print(Subject);
   Query _q = _firestore
       .collection(Branch)
       .document(Year)
-      .collection('Mathematics-1')
+      //TODO: Variable Subject
+      .collection(Subject)
       .document(DocType)
       .collection(DocType)
       .orderBy('title')
@@ -24,5 +25,5 @@ print("in getProduct()");
   print(list[0].data['title']);
 
   _loading = false;
-print("out of getproduct()");
+  print("out of getproduct()");
 }

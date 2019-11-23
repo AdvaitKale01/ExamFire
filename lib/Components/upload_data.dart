@@ -1,19 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:college_app/Components/uploadDoc.dart';
-
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:college_app/Components/SelectDoucumentAndUpload.dart';
 
-
 Future UploadData(
-    { String Title,
+    {String Title,
     String Year,
-   String  Branch,
+    String Branch,
     String DocType,
     String Subject,
     String Teacher}) async {
-
   String url;
 
 // To upload Data to firebase Storage and get Download URL
@@ -22,17 +18,19 @@ Future UploadData(
 
   var userName = prefs.getString('username');
 
-  final StorageReference firebaseStorageRef =
-  FirebaseStorage.instance.ref().child('$Branch/$Year/$Subject/$DocType/$Title+$userName');
+  final StorageReference firebaseStorageRef = FirebaseStorage.instance
+      .ref()
+      .child('$Branch/$Year/$Subject/$DocType/$Title+$userName');
   print(filePath);
 
-  final StorageUploadTask uploadTask =await firebaseStorageRef.putFile(filePath);
+  final StorageUploadTask uploadTask =
+      await firebaseStorageRef.putFile(filePath);
 
   print(uploadTask.isComplete);
   print(uploadTask.isSuccessful);
-  if(uploadTask.isSuccessful==false){
+  if (uploadTask.isSuccessful == false) {
     var dowurl = await (await uploadTask.onComplete).ref.getDownloadURL();
-     url = dowurl.toString();
+    url = dowurl.toString();
 
     print(url);
   }
@@ -51,7 +49,7 @@ Future UploadData(
     'title': Title,
     'uploader': userName,
     'uploaderEmail': userEmail,
-    'URL':  url,
+    'URL': url,
   });
   print(ref.documentID);
 }
