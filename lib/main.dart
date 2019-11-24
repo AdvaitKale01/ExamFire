@@ -26,13 +26,19 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         MainPage.id: (context) => MainPage(),
         SettingPage.id: (context) => SettingPage(),
-        ShowScreen.id:(context)=>ShowScreen(),
-
+        ShowScreen.id: (context) => ShowScreen(),
       },
       title: 'ExamFire',
       theme: ThemeData(
-        primaryColor: AppColors.primaryBlue,
+        brightness: Brightness.light,
+        primaryColor: Colors.white,
         fontFamily: 'Quicksand',
+      ),
+      darkTheme: ThemeData(
+        primaryIconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
+        brightness: Brightness.dark,
+        bottomAppBarColor: Colors.black,
       ),
     );
   }

@@ -2,7 +2,6 @@ import 'package:college_app/Exampaper/MstShow.dart';
 import 'package:college_app/Screens/home_screen.dart';
 import 'package:college_app/Screens/userinfo_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:college_app/Components/connect_button.dart';
 import 'package:college_app/Components/googleSingIn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
