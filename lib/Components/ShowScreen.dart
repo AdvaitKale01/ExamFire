@@ -166,7 +166,7 @@ class _ShowScreenState extends State<ShowScreen> {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(15.0),
                   labelText: 'Subject',
-                  hintText: 'Subject of Document',
+                  hintText: 'Eg: Mathematics-1',
                   hintStyle:
                       kNormalTextStyle.copyWith(fontWeight: FontWeight.bold),
                   labelStyle:
@@ -207,19 +207,37 @@ class _ShowScreenState extends State<ShowScreen> {
               hideSuggestionsOnKeyboardHide: false,
               onSaved: (value) => Subject = value,
             ),
-            RaisedButton(
-              child: Text('Show'),
-              onPressed: () async {
-                Subject = _typeAheadController.text;
-                print(Subject);
-                await getProduct();
-
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return ShowData();
-                  }),
-                );
-              },
+            Container(
+              margin: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width / 4,
+                  right: MediaQuery.of(context).size.width / 4,
+                  top: MediaQuery.of(context).size.height / 18),
+              child: RaisedButton(
+                padding: EdgeInsets.all(14),
+                color: AppColors.primaryBlack,
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                    fontFamily: Fonts.primaryFont,
+                    fontSize: 18.0,
+                    color: AppColors.secondaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                onPressed: () async {
+                  Subject = _typeAheadController.text;
+                  print(Subject);
+                  await getProduct();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) {
+                      return ShowData();
+                    }),
+                  );
+                },
+              ),
             ),
           ],
         ),
