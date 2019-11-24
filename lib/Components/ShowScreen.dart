@@ -1,17 +1,18 @@
 import 'package:college_app/Screens/ShowThingsScreen.dart';
+import 'package:college_app/Screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:college_app/Components/utils.dart';
 import 'package:college_app/Components/subject_data.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:college_app/Components/ShowScreenCompo.dart';
-import 'package:college_app/Screens/ShowThingsScreen.dart';
 import 'package:college_app/Screens/setting_page.dart';
+import 'package:college_app/Components/ShowScreenCompo.dart';
 
 String Branch = 'Computer Science',
     Year = 'First Year',
     Subject,
-    DocType = 'Notes';
+    DocType = docType;
 
 class ShowScreen extends StatefulWidget {
   static String id = 'ShowScreen';
@@ -27,6 +28,8 @@ class _ShowScreenState extends State<ShowScreen> {
     super.initState();
     SubjectsService.getYear(Year, Branch);
     Subject = _typeAheadController.text;
+    DocType = docType;
+    print('ShowScreen ' + DocType);
   }
 
   @override
@@ -243,7 +246,6 @@ class _ShowScreenState extends State<ShowScreen> {
                     ),
                     onPressed: () async {
                       Subject = _typeAheadController.text;
-                      print(Subject);
                       await getProduct();
                       Navigator.of(context).push(
                         MaterialPageRoute(

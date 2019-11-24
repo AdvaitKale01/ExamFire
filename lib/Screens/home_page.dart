@@ -3,6 +3,8 @@ import 'package:college_app/Components/home_card.dart';
 import 'package:college_app/Screens/paper/main_page.dart';
 import 'package:flutter/material.dart';
 
+String docType;
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -22,6 +24,7 @@ class _HomePageState extends State<HomePage> {
           height: 200,
           width: 350,
           onPressed: () {
+            docType = 'Mid Sem Test Paper';
             Navigator.pushNamed(context, ShowScreen.id);
           },
           text: 'MID SEM EXAM',
@@ -35,7 +38,10 @@ class _HomePageState extends State<HomePage> {
           height: 200,
           width: 350,
           image: 'est.png',
-          onPressed: () {},
+          onPressed: () {
+            docType = 'End Sem Test Paper';
+            Navigator.pushNamed(context, ShowScreen.id);
+          },
           colors: [Color(0xFF114357), Color(0xFFF29492)],
         ),
         SizedBox(
@@ -46,7 +52,10 @@ class _HomePageState extends State<HomePage> {
           image: 'notes.png',
           height: 200,
           width: 350,
-          onPressed: () {},
+          onPressed: () {
+            docType = 'Notes';
+            Navigator.pushNamed(context, ShowScreen.id);
+          },
           colors: [Color(0xFF67B26F), Color(0xFF4ca2cd)],
         ),
         SizedBox(
@@ -57,7 +66,10 @@ class _HomePageState extends State<HomePage> {
           image: 'assignment.png',
           height: 200,
           width: 350,
-          onPressed: () {},
+          onPressed: () {
+            docType = 'Assignment';
+            Navigator.pushNamed(context, ShowScreen.id);
+          },
           colors: [Color(0xFFf46b45), Color(0xFFeea849)],
         ),
       ],
