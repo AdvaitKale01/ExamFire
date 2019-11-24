@@ -6,7 +6,6 @@ import 'package:college_app/Components/subject_data.dart';
 import 'package:college_app/Components/upload_data.dart';
 import 'package:college_app/Components/SelectDoucumentAndUpload.dart';
 
-
 class ExploreScreen extends StatefulWidget {
   @override
   _ExploreScreenState createState() => _ExploreScreenState();
@@ -222,7 +221,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ),
                     ],
                   ),
-                  //Type Ahed Form Field
+                  //Type Ahead Form Field
                   Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: TypeAheadFormField(
@@ -231,7 +230,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(15.0),
                           labelText: 'Subject',
-                          hintText: 'Subject of Document',
+                          hintText: 'Eg: Mathematics-1',
                           hintStyle: kNormalTextStyle.copyWith(
                               fontWeight: FontWeight.bold),
                           labelStyle: kNormalTextStyle.copyWith(
@@ -331,7 +330,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                               left: 20.0, right: 20.0, top: 5.0),
                           child: RoundedTextBox(
                             labelText: 'Teacher',
-                            hintText: 'Teacher of Document',
+                            hintText: 'Eg: Jyoti Taylor',
 //                      onChanged: (value) {
 //                        _teacher = value;
 //                      },
