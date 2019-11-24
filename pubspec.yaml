@@ -21,6 +21,9 @@ dependencies:
   file_picker: ^1.4.2
   flutter_typeahead: ^1.7.0
   firebase_storage: ^3.0.8
+  flutter_pdfview: ^1.0.0+9
+  path_provider: ^1.4.4
+  http:
 
 
 dev_dependencies:

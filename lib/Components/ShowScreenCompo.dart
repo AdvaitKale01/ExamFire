@@ -9,8 +9,9 @@ bool _loading = true;
 Future getProduct() async {
   print("in getProduct()");
   _loading = true;
-//hello
+
   print(Subject);
+
   Query _q = _firestore
       .collection(Branch)
       .document(Year)
