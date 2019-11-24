@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:college_app/Components/connect_button.dart';
 import 'package:college_app/Components/googleSingIn.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';
@@ -56,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         top: MediaQuery.of(context).size.height / 12),
                     child: ConnectButton(
                       text: 'Connect with\nGoogle',
-                      icon: FontAwesomeIcons.google,
+                      logo: AssetImage('images/google-logo.png'),
                       onPressed: () {
                         try {
                           singIn().whenComplete(() {
@@ -81,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           print(e);
                         }
                       },
-                      color: Colors.redAccent,
+                      color: Colors.white,
                     ),
                   ),
                 ],

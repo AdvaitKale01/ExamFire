@@ -1,15 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:college_app/Components/utils.dart';
 
 class ConnectButton extends StatelessWidget {
   final String text;
   final onPressed;
-  final icon;
+  final logo;
   final color;
   ConnectButton({
     @required this.onPressed,
     @required this.text,
-    @required this.icon,
+    @required this.logo,
     @required this.color,
   });
   @override
@@ -26,17 +28,17 @@ class ConnectButton extends StatelessWidget {
         padding: EdgeInsets.all(15.0),
         child: Row(
           children: <Widget>[
-            Icon(
-              icon,
-              color: Colors.white,
-              size: 50,
+            Image(
+              image: logo,
+              height: 50,
+              width: 50,
             ),
             SizedBox(
               width: 20,
             ),
             Text(
               text,
-              style: kButtonTextStyle,
+              style: kButtonTextStyle.copyWith(color: AppColors.primaryBlack),
             ),
           ],
         ),

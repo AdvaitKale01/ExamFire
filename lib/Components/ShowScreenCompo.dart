@@ -14,7 +14,6 @@ Future getProduct() async {
   Query _q = _firestore
       .collection(Branch)
       .document(Year)
-      //TODO: Variable Subject
       .collection(Subject)
       .document(DocType)
       .collection(DocType)
