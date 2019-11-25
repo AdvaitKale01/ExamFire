@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(top: 10, left: 25, right: 25),
         children: <Widget>[
           SizedBox(
             height: 10,
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           HomeCard(
             image: 'mst.png',
             height: 200,
-            width: 350,
+            width: MediaQuery.of(context).size.width,
             onPressed: () {
               docType = 'Mid Sem Test Paper';
               Navigator.pushNamed(context, ShowScreen.id);
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
           HomeCard(
             text: 'END SEM EXAM',
             height: 200,
-            width: 350,
+            width: MediaQuery.of(context).size.width,
             image: 'est.png',
             onPressed: () {
               docType = 'End Sem Test Paper';
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
             text: 'NOTES',
             image: 'notes.png',
             height: 200,
-            width: 350,
+            width: MediaQuery.of(context).size.width,
             onPressed: () {
               docType = 'Notes';
               Navigator.pushNamed(context, ShowScreen.id);
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             text: 'ASSIGNMENTS',
             image: 'assignment.png',
             height: 200,
-            width: 350,
+            width: MediaQuery.of(context).size.width,
             onPressed: () {
               docType = 'Assignment';
               Navigator.pushNamed(context, ShowScreen.id);
