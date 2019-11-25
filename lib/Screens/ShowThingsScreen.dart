@@ -135,7 +135,7 @@ class UniqueColorGenerator {
   static Random random = new Random();
   static Color getColor() {
     return Color.fromARGB(
-        230, random.nextInt(200), random.nextInt(15), random.nextInt(150));
+        230, random.nextInt(200), random.nextInt(155), random.nextInt(150));
   }
 }
 //onTap: () async {
