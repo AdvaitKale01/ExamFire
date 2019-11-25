@@ -38,23 +38,12 @@ class _ShowDataState extends State<ShowData> {
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
         elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image(
-              image: AssetImage('images/appbarlogo.png'),
-              height: 40,
-              width: 40,
-            ),
-            Text(
-              'EXAMFIRE',
-              style: TextStyle(
-                color: Color(0xFFFFA900),
-                fontFamily: 'Roboto',
-              ),
-            ),
-          ],
+        title: Text(
+          'EXAMFIRE',
+          style: TextStyle(
+            color: Color(0xFFFFA900),
+            fontFamily: 'Roboto',
+          ),
         ),
       ),
       body: list.length == 0
@@ -77,10 +66,12 @@ class _ShowDataState extends State<ShowData> {
                         });
                         if (urlPDFPath != null) {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      PdfViewPage(path: urlPDFPath)));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  PdfViewPage(path: urlPDFPath),
+                            ),
+                          );
                         }
                       },
                       child: Container(
