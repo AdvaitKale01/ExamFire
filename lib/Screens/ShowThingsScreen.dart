@@ -138,21 +138,3 @@ class UniqueColorGenerator {
         230, random.nextInt(200), random.nextInt(155), random.nextInt(150));
   }
 }
-//onTap: () async {
-//await getFileFromUrl(list[index].data['URL']).then((f) {
-//setState(() {
-//urlPDFPath = f.path;
-//print(urlPDFPath);
-//});
-//});
-//if (urlPDFPath != null) {
-//Navigator.push(
-//context,
-//MaterialPageRoute(
-//builder: (context) =>
-//PdfViewPage(path: urlPDFPath)));
-//}
-//},
-
-//title: Text(list[index].data['title']),
-//subtitle: Text(list[index].data['uploader']),
