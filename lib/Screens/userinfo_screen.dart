@@ -28,11 +28,6 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
   }
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,

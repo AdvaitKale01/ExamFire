@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'ExamFire',
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.white,
+        primaryColor: AppColors.primaryBlue,
         fontFamily: 'Quicksand',
       ),
       darkTheme: ThemeData(

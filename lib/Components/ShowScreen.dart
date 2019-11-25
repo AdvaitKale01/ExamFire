@@ -80,7 +80,7 @@ class _ShowScreenState extends State<ShowScreen> {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Color(0x884DD0E1), Color(0x884DD0E1)],
+                colors: [Color(0xAF4DD0E1), Color(0xAF4DD0E1)],
                 //Color(0xFF86fde8)
               ),
             ),

@@ -25,24 +25,24 @@ class _HomeScreenState extends State<HomeScreen> {
         _pageController.animateToPage(index,
             duration: Duration(milliseconds: 300), curve: Curves.ease);
       });
-
+  static Color iconColor = Colors.black;
   prefix.BottomNavyBarItem homeItem = prefix.BottomNavyBarItem(
       icon: Icon(LineIcons.home),
       title: Text('Home'),
       activeColor: Colors.redAccent,
-      inactiveColor: Colors.black);
+      inactiveColor: iconColor);
 
   prefix.BottomNavyBarItem searchItem = prefix.BottomNavyBarItem(
       icon: Icon(LineIcons.upload),
       title: Text('Upload'),
       activeColor: Colors.lightBlueAccent,
-      inactiveColor: Colors.black);
+      inactiveColor: iconColor);
 
   prefix.BottomNavyBarItem userItem = prefix.BottomNavyBarItem(
       icon: Icon(LineIcons.user),
       title: Text('Account'),
       activeColor: Colors.greenAccent,
-      inactiveColor: Colors.black);
+      inactiveColor: iconColor);
 
   String userEmail, userName, userProfilePicURL, year, branch, program;
   _readUser() async {
@@ -60,6 +60,16 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _readUser();
+  }
+
+  @override
+  void setState(fn) {
+    super.setState(fn);
+    var brightness = MediaQuery.of(context).platformBrightness;
+    if (brightness == Brightness.dark)
+      Color iconColor = Colors.white;
+    else
+      Color iconColor = Colors.black;
   }
 
   @override
