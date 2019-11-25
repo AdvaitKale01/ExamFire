@@ -34,13 +34,27 @@ class _ShowDataState extends State<ShowData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
         elevation: 0,
-        title: Text(
-          'EXAMFIRE',
-          style: TextStyle(
-            color: Color(0xFFFFA900),
-            fontFamily: 'Roboto',
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Image(
+              image: AssetImage('images/appbarlogo.png'),
+              height: 40,
+              width: 40,
+            ),
+            Text(
+              'EXAMFIRE',
+              style: TextStyle(
+                color: Color(0xFFFFA900),
+                fontFamily: 'Roboto',
+              ),
+            ),
+          ],
         ),
       ),
       body: list.length == 0
@@ -88,13 +102,11 @@ class _ShowDataState extends State<ShowData> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Expanded(
-                                    child: Text(
-                                      list[index].data['title'],
-                                      style: kCardTitleTextStyle.copyWith(
-                                          fontSize: 24),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
+                                  Text(
+                                    list[index].data['title'],
+                                    style: kCardTitleTextStyle.copyWith(
+                                        fontSize: 24),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                   Text(
                                     list[index].data['uploader'],

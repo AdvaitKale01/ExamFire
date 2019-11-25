@@ -82,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
+          backgroundColor: Colors.white,
           leading: Padding(
             padding: const EdgeInsets.all(7.0),
             child: Image(
