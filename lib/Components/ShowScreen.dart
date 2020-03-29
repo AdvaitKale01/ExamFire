@@ -5,6 +5,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:college_app/Components/utils.dart';
 import 'package:college_app/Components/subject_data.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+
 import 'package:college_app/Components/ShowScreenCompo.dart';
 import 'package:college_app/Screens/setting_page.dart';
 import 'package:college_app/Components/ShowScreenCompo.dart';
